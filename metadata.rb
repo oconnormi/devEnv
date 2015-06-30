@@ -1,0 +1,15 @@
+name             'devEnv'
+maintainer       "Michael O'Connor"
+maintainer_email 'oconnor.michael.stephen'
+license          'MIT'
+description      'Installs/Configures devEnv'
+long_description 'Installs/Configures devEnv'
+version          '0.1.0'
+
+depends 'git', '~> 4.2.2'
+depends 'java', '~> 1.31.0'
+depends 'maven', '~> 1.3.0'
+depends 'zsh', '~> 1.0.1'
+depends 'nodejs', '~> 2.4.0'
+depends 'xvfb', '~> 2.0.0'
+depends 'atom', '~> 0.1.1'
