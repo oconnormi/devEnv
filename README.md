@@ -83,7 +83,7 @@ For windows [chocolatey](https://chocolatey.org/) is recommended for package ins
 
 `choco install xming`
 
-### devEnv::default
+### Chef
 
 Include `devEnv` in your node's `run_list`:
 
