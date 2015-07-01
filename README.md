@@ -1,27 +1,34 @@
 # devEnv-cookbook
 
-TODO: Enter the cookbook description here.
+Sets up and configures a basic development environment
+
+Installs:
+* Oracle jdk 7
+* maven 3
+* git
+* zsh
+* nodejs
+  * grunt-cli
+* xvfb - to make x11 forwarding work
+* atom
+
+Configures:
+* default shell: zsh
+* oh-my-zsh
+* solarized-dircolors
+* dotfiles from github *default: oconnormi/dotfiles*
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+* Debian
+* Fedora
 
 ## Attributes
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['devEnv']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+| Key                           | Type   | Description                        | Default                               |
+|-------------------------------|--------|------------------------------------|---------------------------------------|
+| ['devEnv']['dotfiles_repo']   | String | Url to a dotfiles git repository   | https://github.com/oconnormi/dotfiles |
+| ['devEnv']['dotfiles_script'] | String | path to script to install dotfiles | scripts/bootstrap                     |
 
 ## Usage
 
@@ -39,4 +46,4 @@ Include `devEnv` in your node's `run_list`:
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Michael O'Connor (<oconnor.michael.stephen@gmail.com>)
