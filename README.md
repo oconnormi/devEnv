@@ -9,6 +9,7 @@ Installs:
 * [zsh](http://www.zsh.org/)
 * [nodejs](https://nodejs.org/)
   * [grunt-cli](https://www.npmjs.com/package/grunt-cli)
+  * [bower](http://bower.io/)
 * [xvfb](http://www.x.org/archive/X11R7.6/doc/man/man1/Xvfb.1.xhtml) - to make x11 forwarding work
 * [atom](https://atom.io/)
 

@@ -50,6 +50,8 @@ include_recipe 'nodejs::nodejs'
 
 nodejs_npm "grunt-cli"
 
+nodejs_npm "bower"
+
 include_recipe 'xvfb'
 
 include_recipe 'atom::default'
