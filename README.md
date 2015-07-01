@@ -3,14 +3,14 @@
 Sets up and configures a basic development environment
 
 Installs:
-* Oracle jdk 7
-* maven 3
-* git
-* zsh
-* nodejs
-  * grunt-cli
-* xvfb - to make x11 forwarding work
-* atom
+* [Oracle jdk 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+* [maven 3](https://maven.apache.org/download.cgi)
+* [git](https://git-scm.com/)
+* [zsh](http://www.zsh.org/)
+* [nodejs](https://nodejs.org/)
+  * [grunt-cli](https://www.npmjs.com/package/grunt-cli)
+* [xvfb](http://www.x.org/archive/X11R7.6/doc/man/man1/Xvfb.1.xhtml) - to make x11 forwarding work
+* [atom](https://atom.io/)
 
 Configures:
 * default shell: zsh
