@@ -6,7 +6,7 @@ default['xvfb']['args'] = '-ac'
 
 # Java Attributes
 default['devEnv']['install_java'] = true
-default['java']['jdk_version'] = '7'
+default['java']['jdk_version'] = '8'
 default['java']['set_etc_environment'] = true
 default['java']['oracle']['accept_oracle_download_terms'] = true
 default['java']['oracle_rpm']['type'] = 'jdk'

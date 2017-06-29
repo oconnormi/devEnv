@@ -10,47 +10,41 @@ end
 include_recipe 'git'
 
 bash 'bootstrap_dotfiles' do
-    code "su - vagrant -c /home/vagrant/.dotfiles/#{node['devEnv']['dotfiles_script']}"
-    creates '/home/vagrant/.git-prompt'
+    code "su - ubuntu -c /home/ubuntu/.dotfiles/#{node['devEnv']['dotfiles_script']}"
+    creates '/home/ubuntu/.git-prompt'
     action :nothing
 end
 
-git '/home/vagrant/.dircolors' do
+git '/home/ubuntu/.dircolors' do
   repository 'https://github.com/seebi/dircolors-solarized.git'
-  user 'vagrant'
-  group 'vagrant'
+  user 'ubuntu'
+  group 'ubuntu'
   action :sync
 end
 
-git '/home/vagrant/.oh-my-zsh' do
+git '/home/ubuntu/.oh-my-zsh' do
   repository 'https://github.com/robbyrussell/oh-my-zsh.git'
-  user 'vagrant'
-  group 'vagrant'
+  user 'ubuntu'
+  group 'ubuntu'
   action :sync
 end
 
-git '/home/vagrant/.dotfiles' do
+git '/home/ubuntu/.dotfiles' do
   repository node['devEnv']['dotfiles_repo']
-  user 'vagrant'
-  group 'vagrant'
+  user 'ubuntu'
+  group 'ubuntu'
   action :sync
   notifies :run, 'bash[bootstrap_dotfiles]', :immediately
 end
 
 include_recipe 'java'
 include_recipe 'maven'
-include_recipe 'zsh'
+package 'zsh'
 
-user 'vagrant' do
+user 'ubuntu' do
   shell '/bin/zsh'
   action :modify
 end
-
-include_recipe 'nodejs::nodejs'
-
-nodejs_npm "grunt-cli"
-
-nodejs_npm "bower"
 
 include_recipe 'xvfb'
 

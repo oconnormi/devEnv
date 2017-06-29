@@ -8,8 +8,9 @@ Vagrant.require_version '>= 1.5.0'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Global box settings
-  config.omnibus.chef_version = '12.1.0'
+  config.omnibus.chef_version = '13.0.118'
   config.berkshelf.enabled = true
+  config.berkshelf.berksfile_path = 'cookbooks/devEnv/Berksfile'
   config.vm.synced_folder "~/.m2", "/home/vagrant/.m2"
   config.vm.synced_folder "~/workspace", "/home/vagrant/workspace"
   config.ssh.forward_x11 = true
@@ -20,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   if Vagrant.has_plugin?("landrush")
     config.landrush.enabled = true
+    config.landrush.tld = 'dev'
   else
     puts 'landrush not installed, dns resolution will not be available'
   end
@@ -31,11 +33,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Define VM
   config.vm.define "dev" do |dev|
-    dev.vm.hostname =  'dev.vagrant.dev'
-    dev.vm.box = 'chef/ubuntu-14.04'
+    dev.vm.hostname =  'ubuntu.vagrant.dev'
+    dev.vm.box = 'ubuntu/xenial64'
     dev.vm.network :private_network, type: "dhcp"
     dev.vm.provision "chef_zero" do |chef|
       chef.cookbooks_path = "cookbooks"
+      chef.nodes_path = "nodes"
       chef.add_recipe 'devEnv::default'
     end
   end

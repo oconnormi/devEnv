@@ -8,13 +8,13 @@ pkg/
 
 # Berkshelf
 .vagrant
-/cookbooks
 Berksfile.lock
 
 # Bundler
 Gemfile.lock
 bin/*
 .bundle/*
-
+nodes/*.json
 .kitchen/
 .kitchen.local.yml
+*.log
