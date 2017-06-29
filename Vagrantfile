@@ -11,8 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.omnibus.chef_version = '13.0.118'
   config.berkshelf.enabled = true
   config.berkshelf.berksfile_path = 'cookbooks/devEnv/Berksfile'
-  config.vm.synced_folder "~/.m2", "/home/vagrant/.m2"
-  config.vm.synced_folder "~/workspace", "/home/vagrant/workspace"
+  config.vm.synced_folder "~/.m2", "/home/ubuntu/.m2"
+  config.vm.synced_folder "~/workspace", "/home/ubuntu/workspace"
   config.ssh.forward_x11 = true
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.auto_detect = true
